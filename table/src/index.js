@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { render } from 'react-dom';
-import Demo from './demo-github';
+import Demo from './demo-github-json';
 
 const rootElement = document.querySelector('#root');
 if (rootElement) {

@@ -30,22 +30,9 @@ const repoMap = {
   repo4: "ghme.json"
 };
 
-/*
-function createData(login, name, location) {
-  return { login, name, location };
-}
-
-const data = [
-  createData("stormasm", "Michael Angerman", "Corvallis, OR"),
-  createData("stormdock", "Storm Dock", "Santa Fe, NM"),
-  createData("stormreact", "Storm React", "Buenos Aires")
-];
-*/
 class SimpleTable extends React.Component {
   constructor(props) {
     super(props);
-
-    // const { classes } = props;
 
     this.state = {
       data: {},
@@ -56,17 +43,6 @@ class SimpleTable extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    /*
-    Do NOT Delete for awhile --- helpful for debugging...
-
-    const locationChanged = nextProps.location !== this.props.location;
-    console.log("componentWillUpdate");
-    console.log("locationChanged: ", locationChanged);
-    console.log(nextProps.location);
-    console.log(nextProps.match.params.repo);
-    console.log(nextProps.match.params.view);
-    console.log(repoMap[nextProps.match.params.repo]);
-*/
     const url = template + repoMap[nextProps.match.params.repo];
 
     this.setState({ isLoading: true });
@@ -78,7 +54,7 @@ class SimpleTable extends React.Component {
           return response.json();
         } else {
           throw new Error(
-            "Sorry, but something went wrong in the CardWrapper..."
+            "Sorry, but something went wrong in demo-github-json..."
           );
         }
       })
@@ -98,7 +74,7 @@ class SimpleTable extends React.Component {
           return response.json();
         } else {
           throw new Error(
-            "Sorry, but something went wrong in the CardWrapper..."
+            "Sorry, but something went wrong in demo-github-json..."
           );
         }
       })

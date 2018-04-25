@@ -21,7 +21,7 @@ const styles = theme => ({
 });
 
 const template =
-  "https://raw.githubusercontent.com/stormasm/mui-demos/master/table/src/";
+  "https://raw.githubusercontent.com/stormasm/mui-demos/master/table/src/data/";
 
 const repoMap = {
   repo1: "html5-node-diagram.json",

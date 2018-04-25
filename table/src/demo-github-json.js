@@ -20,10 +20,8 @@ const styles = theme => ({
   }
 });
 
-let id = 0;
 function createData(login, name, location) {
-  id += 1;
-  return { id, login, name, location };
+  return { login, name, location };
 }
 
 const data = [
@@ -46,14 +44,14 @@ function SimpleTable(props) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.map(n => {
+          {data.map((key, index) => {
             return (
-              <TableRow key={n.id}>
+              <TableRow key={index}>
                 <TableCell>
-                  <a href={"https://github.com/" + n.login}>{n.login}</a>
+                  <a href={"https://github.com/" + key.login}>{key.login}</a>
                 </TableCell>
-                <TableCell>{n.name}</TableCell>
-                <TableCell>{n.location}</TableCell>
+                <TableCell>{key.name}</TableCell>
+                <TableCell>{key.location}</TableCell>
               </TableRow>
             );
           })}

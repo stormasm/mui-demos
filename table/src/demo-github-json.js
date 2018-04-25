@@ -51,7 +51,7 @@ class SimpleTable extends React.Component {
       data: {},
       isLoading: false,
       error: null,
-      repoName: repoMap['repo4']
+      repoName: repoMap["repo3"]
     };
   }
 
@@ -70,7 +70,7 @@ class SimpleTable extends React.Component {
     const url = template + repoMap[nextProps.match.params.repo];
 
     this.setState({ isLoading: true });
-    this.setState({ repoName: repoMap['repo4'] });
+    this.setState({ repoName: repoMap["repo3"] });
 
     fetch(url)
       .then(response => {
@@ -88,7 +88,7 @@ class SimpleTable extends React.Component {
 
   componentDidMount() {
     this.setState({ isLoading: true });
-    this.setState({ repoName: repoMap['repo4'] });
+    this.setState({ repoName: repoMap["repo3"] });
 
     const url = template + this.state.repoName;
 
@@ -107,10 +107,7 @@ class SimpleTable extends React.Component {
   }
 
   render() {
-
-    const {
-      classes
-    } = this.props;
+    const { classes } = this.props;
 
     const hits = this.state.data.hits || [];
 

@@ -1,18 +1,23 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
-import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
-import Paper from 'material-ui/Paper';
+import React from "react";
+import PropTypes from "prop-types";
+import { withStyles } from "material-ui/styles";
+import Table, {
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow
+} from "material-ui/Table";
+import Paper from "material-ui/Paper";
 
 const styles = theme => ({
   root: {
-    width: '100%',
+    width: "100%",
     marginTop: theme.spacing.unit * 3,
-    overflowX: 'auto',
+    overflowX: "auto"
   },
   table: {
-    minWidth: 700,
-  },
+    minWidth: 700
+  }
 });
 
 let id = 0;
@@ -22,9 +27,21 @@ function createData(login, name, location) {
 }
 
 const data = [
-  createData(<a href="https://github.com/stormasm">stormasm</a>, 'Michael Angerman', 'Corvallis, OR'),
-  createData(<a href="https://github.com/stormdock">stormdock</a>, 'Storm Dock', 'Santa Fe, NM'),
-  createData(<a href="https://github.com/stormreact">stormreact</a>, 'Storm React', 'Buenos Aires'),
+  createData(
+    <a href="https://github.com/stormasm">stormasm</a>,
+    "Michael Angerman",
+    "Corvallis, OR"
+  ),
+  createData(
+    <a href="https://github.com/stormdock">stormdock</a>,
+    "Storm Dock",
+    "Santa Fe, NM"
+  ),
+  createData(
+    <a href="https://github.com/stormreact">stormreact</a>,
+    "Storm React",
+    "Buenos Aires"
+  )
 ];
 
 function SimpleTable(props) {
@@ -57,7 +74,7 @@ function SimpleTable(props) {
 }
 
 SimpleTable.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(SimpleTable);

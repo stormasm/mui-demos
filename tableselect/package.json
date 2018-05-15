@@ -1,0 +1,20 @@
+{
+  "name": "material-demo",
+  "description": "SimpleTable.js",
+  "version": "0.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "@material-ui/core": "^1.0.0-rc.0",
+    "@material-ui/icons": "^1.0.0-rc.0",
+    "prop-types": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-scripts": "latest"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

@@ -1,17 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import Checkbox from '@material-ui/core/Checkbox';
+import React from "react";
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import Checkbox from "@material-ui/core/Checkbox";
 
 const styles = theme => ({
   root: {
-    width: '100%',
+    width: "100%",
     maxWidth: 360,
-    backgroundColor: theme.palette.background.paper,
-  },
+    backgroundColor: theme.palette.background.paper
+  }
 });
 
 const template =
@@ -37,7 +37,7 @@ class CheckboxList extends React.Component {
     }
 
     this.setState({
-      checked: newChecked,
+      checked: newChecked
     });
   };
 
@@ -82,14 +82,26 @@ class CheckboxList extends React.Component {
   render() {
     const { classes } = this.props;
 
-    console.log(this.state.data);
+    const data = this.state.data;
+    console.log(data);
+    console.log(typeof data);
+
+    const myary = [];
+
+    for (const prop in data) {
+      console.log(prop);
+      console.log(data[prop]);
+      myary.push(data[prop]);
+    }
+
+    console.log(myary);
 
     return (
       <div className={classes.root}>
         <List>
-          {[0, 1, 2, 3].map(value => (
+          {myary.map(value => (
             <ListItem
-              key={value}
+              key={value.name}
               role={undefined}
               dense
               button
@@ -101,7 +113,7 @@ class CheckboxList extends React.Component {
                 tabIndex={-1}
                 disableRipple
               />
-              <ListItemText primary={`Line item ${value + 1}`} />
+              <ListItemText primary={value.name} />
             </ListItem>
           ))}
         </List>
@@ -111,7 +123,7 @@ class CheckboxList extends React.Component {
 }
 
 CheckboxList.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(CheckboxList);

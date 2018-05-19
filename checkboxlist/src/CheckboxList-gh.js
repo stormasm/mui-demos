@@ -83,18 +83,10 @@ class CheckboxList extends React.Component {
     const { classes } = this.props;
 
     const data = this.state.data;
-    console.log(data);
-    console.log(typeof data);
-
     const myary = [];
-
     for (const prop in data) {
-      console.log(prop);
-      console.log(data[prop]);
       myary.push(data[prop]);
     }
-
-    console.log(myary);
 
     return (
       <div className={classes.root}>

@@ -1,5 +1,7 @@
 
-### This is the core mui checkbox list example.
+### This is the core
+[material-ui checkbox](https://material-ui.com/demos/lists/#checkbox)
+list example.
 
 All future checkbox examples are based on this...
 
